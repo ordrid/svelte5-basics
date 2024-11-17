@@ -14,7 +14,13 @@
 	};
 </script>
 
-<Header {name} />
+<Header {name}>
+	<h1>Something else</h1>
+
+	{#snippet secondChild()}
+		<p>Second child</p>
+	{/snippet}
+</Header>
 
 <p class="my-4 text-xl">{sentence}.</p>
 
