@@ -3,10 +3,11 @@
 	import { Input } from '$lib/components/ui/input';
 	import { derived } from 'svelte/store';
 	import Header from './Header.svelte';
+	import MyForm from './MyForm.svelte';
 
 	let name = $state('Joikrezsa');
 	let status: 'open' | 'closed' = $state('open');
-  let sentence = $derived(`${name} is beautiful.`);
+	let sentence = $derived(`${name} is beautiful.`);
 
 	const onclick = () => {
 		status = status === 'open' ? 'closed' : 'open';
@@ -21,4 +22,6 @@
 
 <p class="my-4 text-xl">The store is now {status}.</p>
 
-<Button {onclick}>Toggle Status</Button>
+<Button class="mb-10" {onclick}>Toggle Status</Button>
+
+<MyForm />

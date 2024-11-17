@@ -1,5 +1,11 @@
 <script lang="ts">
-	let { name, nickname }: { name: string; nickname?: string } = $props();
+	import type { Snippet } from 'svelte';
+
+	let { name, children }: { name: string; children: Snippet } = $props();
 </script>
 
-<h1 class="text-2xl font-bold">Hello {name}</h1>
+<div class="container mx-auto">
+	<h1 class="text-2xl font-bold">{name ? name : 'User'}</h1>
+
+	{@render children()}
+</div>
